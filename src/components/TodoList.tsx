@@ -1,6 +1,7 @@
 import React from "react";
+import { FilterValuesType } from "../App";
 
-export type TasksArray = {
+export type TasksType = {
   id: number;
   title: string;
   isDone: boolean;
@@ -8,8 +9,9 @@ export type TasksArray = {
 
 type ToDoListPropsType = {
   title: string;
-  tasks: Array<TasksArray>;
+  tasks: Array<TasksType>;
   removeTasks: (taskid: number) => void;
+  changeFilter: (newFilterValue: FilterValuesType) => void;
 };
 
 export const Todolist = (props: ToDoListPropsType) => {
@@ -32,9 +34,11 @@ export const Todolist = (props: ToDoListPropsType) => {
       <button>+</button>
       <ul>{taskList}</ul>
       <div>
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
+        <button onClick={() => props.changeFilter("all")}>All</button>
+        <button onClick={() => props.changeFilter("active")}>Active</button>
+        <button onClick={() => props.changeFilter("completed")}>
+          Completed
+        </button>
       </div>
     </div>
   );
