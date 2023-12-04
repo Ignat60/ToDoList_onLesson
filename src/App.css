@@ -6,3 +6,33 @@
 .App > div {
   margin-right: 50px;
 }
+
+.error {
+  border: red 1px solid;
+}
+.error-message {
+  color: red;
+}
+.active-filter {
+  background-color: aquamarine;
+}
+.is-done {
+  opacity: 0.5;
+}
+.task {
+  font-weight: bold;
+}
+.task-is-done {
+  font-weight: normal;
+  text-decoration: line-through;
+}
+.btn-filter-active {
+  background-color: #e06c6c;
+  color: white;
+  border: 3px solid #e06c6b;
+  border-radius: 3px;
+}
+.input-error {
+  border: 2px solid red;
+  outline: none;
+}
